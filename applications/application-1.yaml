@@ -20,13 +20,13 @@ spec:
     path: nginx
     repoURL: https://github.com/avenging/argocd-test.git
     targetRevision: main
-  syncPolicy:
-    automated:
-      prune: true
-      selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
-      - Validate=false
-      - Prune=true
-      - ApplyOutOfSyncOnly=true
-      - Force=true
+#  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true
+#    syncOptions:
+#      - CreateNamespace=true
+#      - Validate=false
+#      - Prune=true
+#      - ApplyOutOfSyncOnly=true
+#      - Force=true
