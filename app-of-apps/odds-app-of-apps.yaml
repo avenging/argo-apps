@@ -11,3 +11,7 @@ spec:
     path: applications
     repoURL: 'https://github.com/avenging/argo-apps'
     targetRevision: HEAD
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
