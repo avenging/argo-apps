@@ -1,0 +1,32 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: application-from-scratch2
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: nginx2
+    server: https://kubernetes.default.svc
+  project: odds
+  source:
+    helm:
+      releaseName: application-from-helm
+      valueFiles:
+        - custom-values.yaml
+      #parameters:
+      #  - name: replicaCount
+      #    value: "3"
+    path: nginx
+    repoURL: https://github.com/avenging/argocd-test2.git
+    targetRevision: main
+#  syncPolicy:
+#    automated:
+#      prune: true
+#      selfHeal: true
+#    syncOptions:
+#      - CreateNamespace=true
+#      - Validate=false
+#      - Prune=true
+#      - ApplyOutOfSyncOnly=true
+#      - Force=true
